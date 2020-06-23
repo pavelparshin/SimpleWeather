@@ -13,6 +13,9 @@
 		2BFC1A3C24A2361100E0F9C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFC1A3A24A2361100E0F9C6 /* Main.storyboard */; };
 		2BFC1A3E24A2361100E0F9C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BFC1A3D24A2361100E0F9C6 /* Assets.xcassets */; };
 		2BFC1A4124A2361100E0F9C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFC1A3F24A2361100E0F9C6 /* LaunchScreen.storyboard */; };
+		2BFC1A4924A2367A00E0F9C6 /* CityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC1A4824A2367A00E0F9C6 /* CityCollectionViewController.swift */; };
+		2BFC1A4B24A2389100E0F9C6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC1A4A24A2389100E0F9C6 /* DetailViewController.swift */; };
+		2BFC1A4D24A238D200E0F9C6 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC1A4C24A238D200E0F9C6 /* CityCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		2BFC1A3D24A2361100E0F9C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BFC1A4024A2361100E0F9C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BFC1A4224A2361100E0F9C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BFC1A4824A2367A00E0F9C6 /* CityCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewController.swift; sourceTree = "<group>"; };
+		2BFC1A4A24A2389100E0F9C6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2BFC1A4C24A238D200E0F9C6 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				2BFC1A3624A2361100E0F9C6 /* SceneDelegate.swift */,
 				2BFC1A3824A2361100E0F9C6 /* ViewController.swift */,
 				2BFC1A3A24A2361100E0F9C6 /* Main.storyboard */,
+				2BFC1A4C24A238D200E0F9C6 /* CityCollectionViewCell.swift */,
+				2BFC1A4A24A2389100E0F9C6 /* DetailViewController.swift */,
+				2BFC1A4824A2367A00E0F9C6 /* CityCollectionViewController.swift */,
 				2BFC1A3D24A2361100E0F9C6 /* Assets.xcassets */,
 				2BFC1A3F24A2361100E0F9C6 /* LaunchScreen.storyboard */,
 				2BFC1A4224A2361100E0F9C6 /* Info.plist */,
@@ -139,6 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BFC1A3924A2361100E0F9C6 /* ViewController.swift in Sources */,
+				2BFC1A4D24A238D200E0F9C6 /* CityCollectionViewCell.swift in Sources */,
+				2BFC1A4924A2367A00E0F9C6 /* CityCollectionViewController.swift in Sources */,
+				2BFC1A4B24A2389100E0F9C6 /* DetailViewController.swift in Sources */,
 				2BFC1A3524A2361100E0F9C6 /* AppDelegate.swift in Sources */,
 				2BFC1A3724A2361100E0F9C6 /* SceneDelegate.swift in Sources */,
 			);
