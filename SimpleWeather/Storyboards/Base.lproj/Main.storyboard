@@ -69,6 +69,11 @@
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="customSize" width="150" height="70"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="cityLabel" destination="RMj-YB-K2K" id="pPB-I4-H7O"/>
                                     <outlet property="temperatureLabel" destination="FGW-UJ-B9M" id="EpY-zu-yMv"/>
@@ -83,7 +88,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="City" id="IUM-Rj-OqZ"/>
                     <connections>
-                        <segue destination="6MT-bz-SKm" kind="presentation" id="BIH-WV-akK"/>
+                        <segue destination="6MT-bz-SKm" kind="presentation" identifier="showDetail" id="BIH-WV-akK"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhG-fG-6YS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -97,9 +102,24 @@
                     <view key="view" contentMode="scaleToFill" id="xXJ-DA-NdN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4W-xQ-z2t">
+                                <rect key="frame" x="139" y="263.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Q4W-xQ-z2t" firstAttribute="centerY" secondItem="xXJ-DA-NdN" secondAttribute="centerY" id="Uri-qg-ubs"/>
+                            <constraint firstItem="Q4W-xQ-z2t" firstAttribute="centerX" secondItem="xXJ-DA-NdN" secondAttribute="centerX" id="dFR-dO-lUz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sLo-BX-6Lc"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="Q4W-xQ-z2t" id="HPF-NO-2ln"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xXN-AA-m8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

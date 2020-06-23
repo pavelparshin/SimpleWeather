@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DetailViewController.swift
 //  SimpleWeather
 //
 //  Created by Pavel Parshin on 23.06.2020.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DetailViewController: UIViewController {
+    @IBOutlet var label: UILabel!
+    
+    var city: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        label.text = city
     }
 
-
 }
-
