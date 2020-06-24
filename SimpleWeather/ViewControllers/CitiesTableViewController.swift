@@ -10,17 +10,16 @@ import UIKit
 
 class CitiesTableViewController: UITableViewController {
 
-    private let cityes = DataManager.shared.cities
+    private var cityes: [CityWeather] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NetworkManager.getRequest(city: cityes[0])
+        getCityTemperature()
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return cityes.count
     }
 
@@ -42,14 +41,49 @@ class CitiesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetails" {
             let detailCVC = segue.destination as! DetailViewController
-            detailCVC.city = sender as? Cities
+            detailCVC.city = sender as? CityWeather
         }
     }
     
     //MARK: - Private methods
-    private func configCell(with cell: UITableViewCell, city: Cities) {
-        cell.textLabel?.text = city.name
-        cell.detailTextLabel?.text = "\(city.id)"
+    private func getCityTemperature() {
+        let cityes = DataManager.shared.cities
+        for city in cityes {
+            NetworkManager.getRequest(city: city) { cityData in
+                DispatchQueue.main.async {
+                    self.cityes.append(cityData)
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    //MARK: Cell config
+    private func configCell(with cell: UITableViewCell, city: CityWeather) {
+        guard let name = city.name else { return }
+        guard let temperature = city.main?.temp else { return }
+        
+        cell.textLabel?.text = name
+        cell.detailTextLabel?.text = "\(toString(value: temperature))ºC"
+        
+        getWeatherIcon(with: cell, weather: city.weather)
+    }
+    
+    private func getWeatherIcon(with cell: UITableViewCell, weather: Weather?) {
+        guard let weatherIcon = weather?.icon else { return }
+        let iconUrl = DataManager.shared.weatherIcon(icon: weatherIcon)
+        cell.imageView?.sizeToFit()
+        
+        NetworkManager.getImage(imageUrl: iconUrl) { icon in
+            DispatchQueue.main.async {
+                cell.imageView?.image = icon
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    private func toString(value: Double) -> String {
+        String(format: "%.2f", value)
     }
 
 }

@@ -50,17 +50,18 @@ struct Weather {
 }
 
 struct Temperature {
-    var temp: Float?
-    var pressure: Float?
+    var temp: Double?
+    var pressure: Double?
     var humidity: Int?
-    var temp_min: Float?
-    var temp_max: Float?
+    var temp_min: Double?
+    var temp_max: Double?
     
     init(from cityTemp: [String: Any]) {
-        self.temp = cityTemp["temp"] as? Float
-        self.pressure = cityTemp["pressure"] as? Float
+        //Так как с Api приходит данные температуры в градусах кельвина, то при инициалиции конвертируем их в цельсии
+        self.temp = (cityTemp["temp"] as? Double ?? 0) - 273.15
+        self.pressure = (cityTemp["pressure"] as? Double ?? 0) - 273.15
         self.humidity = cityTemp["humidity"] as? Int
-        self.temp_min = cityTemp["temp_min"] as? Float
-        self.temp_max = cityTemp["temp_max"] as? Float
+        self.temp_min = (cityTemp["temp_min"] as? Double ?? 0) - 273.15
+        self.temp_max = (cityTemp["temp_max"] as? Double ?? 0) - 273.15
     }
 }

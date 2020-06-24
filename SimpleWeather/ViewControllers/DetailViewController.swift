@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet var cityNameLabel: UILabel!
     
-    var city: Cities!
+    var city: CityWeather!
 
     override func viewDidLoad() {
         super.viewDidLoad()
