@@ -17,13 +17,14 @@ class DataManager {
                   Cities(name: "New York", id: 5128581),
                   Cities(name: "London", id: 2643743)]
     
-    //MARK: get URL
+    //MARK: get JSON URL
     let appid = "fb0a0fb25938cf3f0f4b11d60c3176c5"
     
     func getUrl(cityid: Int) -> String {
         return "https://api.openweathermap.org/data/2.5/weather?id=\(cityid)&appid=\(appid)&lang=ru"
     }
     
+    //MARK: get weatcher icon URL
     func weatherIcon(icon: String, size: String = "small") -> String {
         switch size {
         case "big":

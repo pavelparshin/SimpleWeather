@@ -13,10 +13,6 @@ struct Cities {
     var id: Int
 }
 
-struct City {
-    var city: [CityWeather]
-}
-
 struct CityWeather {
     var name: String?
     var id: Int?
@@ -65,6 +61,8 @@ struct Temperature {
         
     }
     
+    //JSON возвращает температуру в кельвинах.
+    //Данный метод переводит в цельсии и сокращает до 1 знака после запятой
     private func toCorrectTemp(value: Any) -> String {
         let newValue = value as! Double - 273.15
         return String(format: "%.1f", newValue)

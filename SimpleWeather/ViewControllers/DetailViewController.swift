@@ -22,7 +22,12 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        viewSettings()
+    }
+    
+    //MARK: - Private method
+    private func viewSettings() {
         guard let name = city.name else { return }
         guard let weatcherDescription = city.weather?.description else { return }
         guard let temperature = city.main?.temp else { return }
@@ -44,11 +49,9 @@ class DetailViewController: UIViewController {
     
     private func getBigIcon(icon: String) {
         let iconUrl = DataManager.shared.weatherIcon(icon: icon, size: "big")
-        DispatchQueue.global().async {
-            NetworkManager.getImage(imageUrl: iconUrl) { icon in
-                DispatchQueue.main.async {
-                    self.weatcherImage.image = icon
-                }
+        NetworkManager.getImage(imageUrl: iconUrl) { icon in
+            DispatchQueue.main.async {
+                self.weatcherImage.image = icon
             }
         }
     }
