@@ -9,7 +9,8 @@
 class DataManager {
     
     static let shared = DataManager()
-    private init() {}
+    private init() {
+    }
     
     let cities = [Cities(name: "Moscow", id: 524894),
                   Cities(name: "Ufa", id: 479561),

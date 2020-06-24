@@ -10,7 +10,7 @@ import UIKit
 
 class CitiesTableViewController: UITableViewController {
 
-    private var cityes: [CityWeather] = []
+    private var cityWeather: [CityWeather] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,19 +20,19 @@ class CitiesTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cityes.count
+        return cityWeather.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath)
-        configCell(with: cell, city: cityes[indexPath.row])
+        configCell(with: cell, city: cityWeather[indexPath.row])
         return cell
     }
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let city = cityes[indexPath.row]
+        let city = cityWeather[indexPath.row]
         performSegue(withIdentifier: "showDetails", sender: city)
         
     }
@@ -47,11 +47,11 @@ class CitiesTableViewController: UITableViewController {
     
     //MARK: - Private methods
     private func getCityTemperature() {
-        let cityes = DataManager.shared.cities
-        for city in cityes {
+        let cityList = DataManager.shared.cities
+        for city in cityList {
             NetworkManager.getRequest(city: city) { cityData in
                 DispatchQueue.main.async {
-                    self.cityes.append(cityData)
+                    self.cityWeather.append(cityData)
                     self.tableView.reloadData()
                 }
             }
@@ -64,7 +64,7 @@ class CitiesTableViewController: UITableViewController {
         guard let temperature = city.main?.temp else { return }
         
         cell.textLabel?.text = name
-        cell.detailTextLabel?.text = "\(toString(value: temperature))ºC"
+        cell.detailTextLabel?.text = "\(temperature)ºC"
         
         getWeatherIcon(with: cell, weather: city.weather)
     }
@@ -81,9 +81,4 @@ class CitiesTableViewController: UITableViewController {
             }
         }
     }
-    
-    private func toString(value: Double) -> String {
-        String(format: "%.2f", value)
-    }
-
 }

@@ -50,18 +50,23 @@ struct Weather {
 }
 
 struct Temperature {
-    var temp: Double?
-    var pressure: Double?
+    var temp: String?
+    var pressure: String?
     var humidity: Int?
-    var temp_min: Double?
-    var temp_max: Double?
+    var temp_min: String?
+    var temp_max: String?
     
     init(from cityTemp: [String: Any]) {
-        //Так как с Api приходит данные температуры в градусах кельвина, то при инициалиции конвертируем их в цельсии
-        self.temp = (cityTemp["temp"] as? Double ?? 0) - 273.15
-        self.pressure = (cityTemp["pressure"] as? Double ?? 0) - 273.15
+        self.temp = toCorrectTemp(value: cityTemp["temp"] ?? 0)
+        self.pressure = toCorrectTemp(value: cityTemp["pressure"] ?? 0)
         self.humidity = cityTemp["humidity"] as? Int
-        self.temp_min = (cityTemp["temp_min"] as? Double ?? 0) - 273.15
-        self.temp_max = (cityTemp["temp_max"] as? Double ?? 0) - 273.15
+        self.temp_min = toCorrectTemp(value: cityTemp["temp_min"] ?? 0)
+        self.temp_max = toCorrectTemp(value: cityTemp["temp_max"] ?? 0)
+        
+    }
+    
+    private func toCorrectTemp(value: Any) -> String {
+        let newValue = value as! Double - 273.15
+        return String(format: "%.1f", newValue)
     }
 }
