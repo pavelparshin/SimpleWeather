@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B07027924A33B3200947506 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B07027824A33B3200947506 /* CitiesTableViewController.swift */; };
 		2B13BE2424A25B0F005A88FB /* CityWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13BE2324A25B0F005A88FB /* CityWeather.swift */; };
 		2B13BE2624A25D0D005A88FB /* DataManaer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13BE2524A25D0D005A88FB /* DataManaer.swift */; };
 		2B13BE2824A25FFB005A88FB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13BE2724A25FFB005A88FB /* NetworkManager.swift */; };
@@ -15,13 +16,12 @@
 		2BFC1A3C24A2361100E0F9C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFC1A3A24A2361100E0F9C6 /* Main.storyboard */; };
 		2BFC1A3E24A2361100E0F9C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BFC1A3D24A2361100E0F9C6 /* Assets.xcassets */; };
 		2BFC1A4124A2361100E0F9C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFC1A3F24A2361100E0F9C6 /* LaunchScreen.storyboard */; };
-		2BFC1A4924A2367A00E0F9C6 /* CityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC1A4824A2367A00E0F9C6 /* CityCollectionViewController.swift */; };
 		2BFC1A4B24A2389100E0F9C6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC1A4A24A2389100E0F9C6 /* DetailViewController.swift */; };
-		2BFC1A4D24A238D200E0F9C6 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC1A4C24A238D200E0F9C6 /* CityCollectionViewCell.swift */; };
 		DB3EC84C2E37675AD1188735 /* Pods_SimpleWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F5F5CD655CF706695095C3 /* Pods_SimpleWeather.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B07027824A33B3200947506 /* CitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
 		2B13BE2324A25B0F005A88FB /* CityWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeather.swift; sourceTree = "<group>"; };
 		2B13BE2524A25D0D005A88FB /* DataManaer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManaer.swift; sourceTree = "<group>"; };
 		2B13BE2724A25FFB005A88FB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -32,9 +32,7 @@
 		2BFC1A3D24A2361100E0F9C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BFC1A4024A2361100E0F9C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BFC1A4224A2361100E0F9C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BFC1A4824A2367A00E0F9C6 /* CityCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewController.swift; sourceTree = "<group>"; };
 		2BFC1A4A24A2389100E0F9C6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		2BFC1A4C24A238D200E0F9C6 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DF9C862B52109FB79BB5C65 /* Pods-SimpleWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeather.release.xcconfig"; path = "Target Support Files/Pods-SimpleWeather/Pods-SimpleWeather.release.xcconfig"; sourceTree = "<group>"; };
 		884BEEFBBDEA4033F32B81FB /* Pods-SimpleWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeather.debug.xcconfig"; path = "Target Support Files/Pods-SimpleWeather/Pods-SimpleWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		A3F5F5CD655CF706695095C3 /* Pods_SimpleWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +74,6 @@
 				2BFC1A5424A2446200E0F9C6 /* Managers */,
 				2BFC1A5324A2445100E0F9C6 /* Models */,
 				2BFC1A5024A243E800E0F9C6 /* ViewControllers */,
-				2BFC1A5224A2443800E0F9C6 /* View */,
 				2BFC1A4F24A243CE00E0F9C6 /* Storyboards */,
 				2BFC1A4E24A243B500E0F9C6 /* SupportingFiles */,
 				2BFC1A5124A2441000E0F9C6 /* Source */,
@@ -107,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				2BFC1A4A24A2389100E0F9C6 /* DetailViewController.swift */,
-				2BFC1A4824A2367A00E0F9C6 /* CityCollectionViewController.swift */,
+				2B07027824A33B3200947506 /* CitiesTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -118,14 +115,6 @@
 				2BFC1A3D24A2361100E0F9C6 /* Assets.xcassets */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		2BFC1A5224A2443800E0F9C6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				2BFC1A4C24A238D200E0F9C6 /* CityCollectionViewCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		2BFC1A5324A2445100E0F9C6 /* Models */ = {
@@ -277,9 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BFC1A4D24A238D200E0F9C6 /* CityCollectionViewCell.swift in Sources */,
 				2B13BE2624A25D0D005A88FB /* DataManaer.swift in Sources */,
-				2BFC1A4924A2367A00E0F9C6 /* CityCollectionViewController.swift in Sources */,
+				2B07027924A33B3200947506 /* CitiesTableViewController.swift in Sources */,
 				2BFC1A4B24A2389100E0F9C6 /* DetailViewController.swift in Sources */,
 				2B13BE2824A25FFB005A88FB /* NetworkManager.swift in Sources */,
 				2B13BE2424A25B0F005A88FB /* CityWeather.swift in Sources */,

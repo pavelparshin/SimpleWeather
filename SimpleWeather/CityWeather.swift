@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct Cities {
+    var name: String
+    var id: Int
+}
+
 struct City {
     var city: [CityWeather]
 }

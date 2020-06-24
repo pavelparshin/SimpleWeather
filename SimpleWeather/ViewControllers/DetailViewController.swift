@@ -9,14 +9,15 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
     @IBOutlet var cityNameLabel: UILabel!
     
-    var city: String!
+    var city: Cities!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        cityNameLabel.text = city
+        cityNameLabel.text = city.name
     }
 
 }
