@@ -6,13 +6,6 @@
 //  Copyright © 2020 Pavel Parshin. All rights reserved.
 //
 
-enum CityId: Int, CaseIterable {
-    case moscow = 524894
-    case ufa = 479561
-    case newyork = 5128581
-    case london = 2172797
-}
-
 class DataManager {
     
     static let shared = DataManager()
@@ -23,7 +16,7 @@ class DataManager {
                   Cities(name: "New York", id: 5128581),
                   Cities(name: "London", id: 2172797)]
     
-    
+    //MARK: get URL
     let appid = "fb0a0fb25938cf3f0f4b11d60c3176c5"
     
     func getUrl(cityid: Int) -> String {

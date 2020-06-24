@@ -15,6 +15,7 @@ class CitiesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NetworkManager.getRequest(city: cityes[0])
     }
 
     // MARK: - Table view data source
