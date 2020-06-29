@@ -24,8 +24,8 @@ class TableViewCell: UITableViewCell {
     func configCell(with cityWeather: CityWeather) {
         guard let name = cityWeather.name else { return }
         guard let temperature = cityWeather.main?.temp else { return }
-        guard let weatcherIconURL = DataManager.shared
-            .weatherIcon(icon: cityWeather.weather?.icon) else { return }
+        guard let weatherIcon = cityWeather.weather?.icon else { return }
+        guard let weatcherIconURL = DataManager.shared.weatherIcon(icon: weatherIcon) else { return }
         
         cityNameLabel.text = name
         temperatureLabel.text = "\(temperature)ºC"
