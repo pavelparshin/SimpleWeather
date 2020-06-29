@@ -11,6 +11,9 @@
 		2B13BE2424A25B0F005A88FB /* CityWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13BE2324A25B0F005A88FB /* CityWeather.swift */; };
 		2B13BE2624A25D0D005A88FB /* DataManaer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13BE2524A25D0D005A88FB /* DataManaer.swift */; };
 		2B13BE2824A25FFB005A88FB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13BE2724A25FFB005A88FB /* NetworkManager.swift */; };
+		2B5E6FCC24A6603500AB5349 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E6FCB24A6603500AB5349 /* ImageView.swift */; };
+		2BBB2D1024AA203D00783B24 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB2D0F24AA203D00783B24 /* ImageManager.swift */; };
+		2BBB2D1224AA24EF00783B24 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB2D1124AA24EF00783B24 /* TableViewCell.swift */; };
 		2BFC1A3524A2361100E0F9C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC1A3424A2361100E0F9C6 /* AppDelegate.swift */; };
 		2BFC1A3724A2361100E0F9C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC1A3624A2361100E0F9C6 /* SceneDelegate.swift */; };
 		2BFC1A3C24A2361100E0F9C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFC1A3A24A2361100E0F9C6 /* Main.storyboard */; };
@@ -25,6 +28,9 @@
 		2B13BE2324A25B0F005A88FB /* CityWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeather.swift; sourceTree = "<group>"; };
 		2B13BE2524A25D0D005A88FB /* DataManaer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManaer.swift; sourceTree = "<group>"; };
 		2B13BE2724A25FFB005A88FB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		2B5E6FCB24A6603500AB5349 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		2BBB2D0F24AA203D00783B24 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		2BBB2D1124AA24EF00783B24 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		2BFC1A3124A2361100E0F9C6 /* SimpleWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BFC1A3424A2361100E0F9C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BFC1A3624A2361100E0F9C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B5E6FCA24A6601400AB5349 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B5E6FCB24A6603500AB5349 /* ImageView.swift */,
+				2BBB2D1124AA24EF00783B24 /* TableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		2BFC1A2824A2361100E0F9C6 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +86,7 @@
 		2BFC1A3324A2361100E0F9C6 /* SimpleWeather */ = {
 			isa = PBXGroup;
 			children = (
+				2B5E6FCA24A6601400AB5349 /* View */,
 				2BFC1A5424A2446200E0F9C6 /* Managers */,
 				2BFC1A5324A2445100E0F9C6 /* Models */,
 				2BFC1A5024A243E800E0F9C6 /* ViewControllers */,
@@ -130,6 +146,7 @@
 			children = (
 				2B13BE2524A25D0D005A88FB /* DataManaer.swift */,
 				2B13BE2724A25FFB005A88FB /* NetworkManager.swift */,
+				2BBB2D0F24AA203D00783B24 /* ImageManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -266,9 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B5E6FCC24A6603500AB5349 /* ImageView.swift in Sources */,
 				2B13BE2624A25D0D005A88FB /* DataManaer.swift in Sources */,
 				2B07027924A33B3200947506 /* CitiesTableViewController.swift in Sources */,
+				2BBB2D1024AA203D00783B24 /* ImageManager.swift in Sources */,
 				2BFC1A4B24A2389100E0F9C6 /* DetailViewController.swift in Sources */,
+				2BBB2D1224AA24EF00783B24 /* TableViewCell.swift in Sources */,
 				2B13BE2824A25FFB005A88FB /* NetworkManager.swift in Sources */,
 				2B13BE2424A25B0F005A88FB /* CityWeather.swift in Sources */,
 				2BFC1A3524A2361100E0F9C6 /* AppDelegate.swift in Sources */,

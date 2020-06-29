@@ -27,18 +27,20 @@ class NetworkManager {
         }
     }
     
+    /*
     static func getImage(imageUrl: String, complition: @escaping (UIImage) -> Void) {
         AF.request(imageUrl).validate()
             .responseData { weatherIcon in
                 switch weatherIcon.result {
                 case .success(let jsonValue):
-
+                    
                     guard let icon = UIImage(data: jsonValue) else { return }
                     complition(icon)
-                              
+                    
                 case .failure(let error):
                     print(error)
                 }
         }
     }
+ */
 }

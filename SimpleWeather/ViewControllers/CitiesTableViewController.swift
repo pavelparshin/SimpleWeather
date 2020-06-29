@@ -50,10 +50,8 @@ class CitiesTableViewController: UITableViewController {
         let cityList = DataManager.shared.cities
         for city in cityList {
             NetworkManager.getRequest(city: city) { cityData in
-                DispatchQueue.main.async {
-                    self.cityWeather.append(cityData)
-                    self.tableView.reloadData()
-                }
+                self.cityWeather.append(cityData)
+                self.tableView.reloadData()
             }
         }
     }
@@ -75,10 +73,8 @@ class CitiesTableViewController: UITableViewController {
         cell.imageView?.sizeToFit()
         
         NetworkManager.getImage(imageUrl: iconUrl) { icon in
-            DispatchQueue.main.async {
-                cell.imageView?.image = icon
-                self.tableView.reloadData()
-            }
+            cell.imageView?.image = icon
+            self.tableView.reloadData()
         }
     }
 }

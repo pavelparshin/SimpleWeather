@@ -50,9 +50,7 @@ class DetailViewController: UIViewController {
     private func getBigIcon(icon: String) {
         let iconUrl = DataManager.shared.weatherIcon(icon: icon, size: "big")
         NetworkManager.getImage(imageUrl: iconUrl) { icon in
-            DispatchQueue.main.async {
-                self.weatcherImage.image = icon
-            }
+            self.weatcherImage.image = icon
         }
     }
     
