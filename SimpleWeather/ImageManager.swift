@@ -6,19 +6,19 @@
 //  Copyright © 2020 Pavel Parshin. All rights reserved.
 //
 
-import Foundation
+import Alamofire
 
 class ImageManager {
     static let shared = ImageManager()
     private init() {}
-    
-    func getImage(from url: URL, complition: @escaping (Data, URLResponse) -> Void) {
+
+    func getImage(from url: URL, completion: @escaping (Data, URLResponse) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error { print(error); return }
             guard let data = data, let response = response else { return }
             guard let responseURL = response.url else { return }
             guard responseURL == url else { return }
-            complition(data, response)
+            completion(data, response)
         }
     }
 }

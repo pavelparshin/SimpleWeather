@@ -24,8 +24,8 @@ class CitiesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath)
-        configCell(with: cell, city: cityWeather[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as! TableViewCell
+        cell.configCell(with: cityWeather[indexPath.row])
         return cell
     }
     
@@ -35,6 +35,10 @@ class CitiesTableViewController: UITableViewController {
         let city = cityWeather[indexPath.row]
         performSegue(withIdentifier: "showDetails", sender: city)
         
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        50
     }
     
     //MARK: - Navigation
@@ -49,32 +53,11 @@ class CitiesTableViewController: UITableViewController {
     private func getCityTemperature() {
         let cityList = DataManager.shared.cities
         for city in cityList {
-            NetworkManager.getRequest(city: city) { cityData in
+            NetworkManager.shared.getRequest(city: city) { cityData in
                 self.cityWeather.append(cityData)
                 self.tableView.reloadData()
             }
         }
     }
     
-    //MARK: Cell config
-    private func configCell(with cell: UITableViewCell, city: CityWeather) {
-        guard let name = city.name else { return }
-        guard let temperature = city.main?.temp else { return }
-        
-        cell.textLabel?.text = name
-        cell.detailTextLabel?.text = "\(temperature)ºC"
-        
-        getWeatherIcon(with: cell, weather: city.weather)
-    }
-    
-    private func getWeatherIcon(with cell: UITableViewCell, weather: Weather?) {
-        guard let weatherIcon = weather?.icon else { return }
-        let iconUrl = DataManager.shared.weatherIcon(icon: weatherIcon)
-        cell.imageView?.sizeToFit()
-        
-        NetworkManager.getImage(imageUrl: iconUrl) { icon in
-            cell.imageView?.image = icon
-            self.tableView.reloadData()
-        }
-    }
 }

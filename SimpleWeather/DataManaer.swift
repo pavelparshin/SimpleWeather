@@ -25,7 +25,8 @@ class DataManager {
     }
     
     //MARK: get weatcher icon URL
-    func weatherIcon(icon: String, size: String = "small") -> String {
+    func weatherIcon(icon: String?, size: String = "small") -> String? {
+        guard let icon = icon else { return nil}
         switch size {
         case "big":
             return "https://openweathermap.org/img/wn/\(icon)@2x.png"

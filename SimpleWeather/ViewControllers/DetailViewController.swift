@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var temperatureRangeLabel: UILabel!
     @IBOutlet var humidityLabel: UILabel!
     @IBOutlet var pressureLabel: UILabel!
-    @IBOutlet var weatcherImage: UIImageView!
+    @IBOutlet var weatcherImage: ImageView!
     
     var city: CityWeather!
 
@@ -35,7 +35,9 @@ class DetailViewController: UIViewController {
         guard let maxTemp = city.main?.temp_max else { return }
         guard let humidity = city.main?.humidity else { return }
         guard let pressure = city.main?.pressure else { return }
+        
         guard let weatcherIcon = city.weather?.icon else { return }
+        guard let iconUrl = DataManager.shared.weatherIcon(icon: weatcherIcon, size: "big") else { return }
         
         cityNameLabel.text = name
         weatcherDescriptionLabel.text = "Сегодня: \(weatcherDescription)"
@@ -44,14 +46,7 @@ class DetailViewController: UIViewController {
         humidityLabel.text = "Видимость: \(humidity)%"
         pressureLabel.text = "Давление: \(pressure)hPa"
         
-        getBigIcon(icon: weatcherIcon)
-    }
-    
-    private func getBigIcon(icon: String) {
-        let iconUrl = DataManager.shared.weatherIcon(icon: icon, size: "big")
-        NetworkManager.getImage(imageUrl: iconUrl) { icon in
-            self.weatcherImage.image = icon
-        }
+        weatcherImage.fetchImage(from: iconUrl)
     }
     
 }

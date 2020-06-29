@@ -10,7 +10,10 @@ import Alamofire
 
 class NetworkManager {
     
-    static func getRequest(city: Cities, with complition: @escaping (CityWeather) -> Void) {
+    static let shared = NetworkManager()
+    private init() {}
+    
+    func getRequest(city: Cities, with complition: @escaping (CityWeather) -> Void) {
         let url = DataManager.shared.getUrl(cityid: city.id)
         AF.request(url).validate()
             .responseJSON { cityData in
@@ -26,21 +29,4 @@ class NetworkManager {
                 }
         }
     }
-    
-    /*
-    static func getImage(imageUrl: String, complition: @escaping (UIImage) -> Void) {
-        AF.request(imageUrl).validate()
-            .responseData { weatherIcon in
-                switch weatherIcon.result {
-                case .success(let jsonValue):
-                    
-                    guard let icon = UIImage(data: jsonValue) else { return }
-                    complition(icon)
-                    
-                case .failure(let error):
-                    print(error)
-                }
-        }
-    }
- */
 }
